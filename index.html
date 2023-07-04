@@ -1,46 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Hotel Booking Application</title>
-</head>
-<body>
-  <h1>Hotel Booking Application</h1>
+!DOCTYPE html>
+ <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Online HotelBooking Application</title>
+  </head>
+  <body>
+    <div>
+      <h1> Welcome to Hotel booking </h1>  
+    </div>
+    <dv>
+      <h2> hotel description </h2>
+      <P> name> Hotelid >name >1235</P>
+      <p> name> location> name> Newyork city</p>
+      <p> </p>
+    </dv>
+    <dv>
+      <h3>Hotel location highlights </h3>
+      <ul>
+        <li>Nearby attractions </li>
+        <l> public transport</l>
+        <li> resturants and cafes </li>
+        </ul>
+        <dv>
+          <h4> search hotel</h4>
+          <form>
+          <label for="location">Location:</label></P>
+           <input type="text" id="location" name="location" >
+         <label for="check-in">Check-in Date:</label>
+           <input type="date" id="check-in" name="check-in">
+         <label for="check-out">Check-out Date:</label>
+            <input type="date" id="check-out" name="check-out">
+        <label for="rooms">Number of Rooms:</label>
+            <input type="number" id="rooms" name="rooms" min="1">
+            <input type="submit" value="Search">
+          </form>
+        </dv>
+        <dv>
+        <h5> Make payment for hotel</h5>
+        <form>
+          <!-- Payment form -->
+        </form>
+        </dv>
 
-  <h2>Search Hotels</h2>
-  <form>
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" required><br><br>
-
-    <label for="check-in">Check-in Date:</label>
-    <input type="date" id="check-in" name="check-in" required><br><br>
-
-    <label for="check-out">Check-out Date:</label>
-    <input type="date" id="check-out" name="check-out" required><br><br>
-
-    <label for="rooms">Number of Rooms:</label>
-    <input type="number" id="rooms" name="rooms" min="1" required><br><br>
-
-    <input type="submit" value="Search">
+    </dv>
   </form>
-
-  <h2>Leave a Review</h2>
+  <h6>Leave a Review</h6>
   <form>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required><br><br>
+    <input type="text" id="name" name="name">
 
     <label for="rating">Rating:</label>
-    <select id="rating" name="rating" required>
+    <select id="rating" name="rating"></select>
       <option value="5">5 Stars</option>
       <option value="4">4 Stars</option>
       <option value="3">3 Stars</option>
       <option value="2">2 Stars</option>
       <option value="1">1 Star</option>
-    </select><br><br>
-
+    </select>
     <label for="review">Review:</label>
-    <textarea id="review" name="review" rows="4" cols="50" required></textarea><br><br>
-
+    <text id="review" name="review" rows="4" cols="50"></text>
     <input type="submit" value="Submit Review">
   </form>
+</dv>
+<h2>id="hotel-image-container"></h2>
+ <!-- photogallery here -->
+</dv>
+<footer>
+  <p>&copy; 2023 Hotel Booking. All rights reserved.</p>
+</footer>
 </body>
 </html>
