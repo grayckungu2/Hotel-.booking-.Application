@@ -1,74 +1,70 @@
-// code solution
+//fetching data from api
+const axios = require('axios');
 
-const URL = "http://localhost:3000/Hotelpaymentfeatures";
+const options = {
+  method: 'GET',
+  url: 'https://airbnb19.p.rapidapi.com/api/v2/getPropertyDetails',
+  params: {
+    propertyId: '-1',
+    currency: 'USD'
+  },
+  headers: {
+    'X-RapidAPI-Key': '1deea4c09amsh3f251fe6f82b9f3p1d354bjsne182995ce605',
+    'X-RapidAPI-Host': 'airbnb19.p.rapidapi.com'
+  }
+};
 
-let listholder = document.getElementById("Hotelpaymentfeatures");
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementsByClassName("paymentfeatures")[0].remove();
-  fetchPaymentFeatures(URL);
-});
-
-function fetchPaymentFeatures(URL) {
+try {
+	const response = await axios.request(options);
+	console.log(response.data);
+} catch (error) {
+	console.error(error);
 }
-
-function fetchPaymentFeatures(URL) {
-    fetch(URL)
-      .then(response => response.json())
-      .then(paymentFeatures => {
-        paymentFeatures.forEach(paymentFeature => {
-          displayPaymentFeature(paymentFeature);
-        });
-      });
-  }
-  function displayPaymentFeature(paymentFeature) {
-    const li = document.createElement('li');
-    li.style.cursor = "pointer";
-    li.textContent = paymentFeature.toUpperCase();
-    listHolder.appendChild(li);
-    addClickEvent(li);
-  }
-  
-  function addClickEvent(element) {
-    element.addEventListener('click', () => {
-      fetch(`${url}/${element.textContent.toLowerCase()}`)
-        .then(res => res.json())
-        .then(paymentFeature => {
-          document.getElementById('book').textContent = 'book';
-          setUpPaymentFeature(paymentFeature);
-        });
-    });
-  }
-
-  function displayPaymentFeatures() {
-    const paymentFeatures = data.Hotelpaymentfeatures;
-    const paymentFeaturesContainer = document.getElementById("paymentFeaturesContainer"); // Assuming there is an element with id "paymentFeaturesContainer" in your HTML
-  
-    paymentFeatures.forEach(feature => {
-      const featureElement = document.createElement("div");
-      featureElement.innerHTML = `
-        <p>Bookable: ${feature.bookable}</p>
-        <p>CVC Required: ${feature.cvc_required}</p>
-        <p>Payable: ${feature.payable}</p>
-        <p>Is Direct Payment: ${feature.is_direct_payment}</p>
-        <p>Credit Card ID: ${feature.creditcard_id}</p>
-        <p>Hotel ID: ${feature.hotel_id}</p>
-        <button class="bookingButton">Make Booking</button>
-      `;
-      paymentFeaturesContainer.appendChild(featureElement);
-    });
-  
-    const bookingButtons = document.getElementsByClassName("bookingButton");
-    for (let i = 0; i < bookingButtons.length; i++) {
-      bookingButtons[i].addEventListener("click", function() {
-        makeBooking(paymentFeatures[i].bookable);
-      });
+function fetchHotelData() {
+    fetch('http://localhost:3000/Hotels')
+    .then(response => response.json())
+    .then(data => displayHotelData(data))
+    .catch(error => console.error('Error', error));
     }
-  }
-  
-  function makeBooking(bookable) {
-    if (bookable) {
-      alert("Booking successful!");
-    } else {
-      alert("Sorry, this feature is not bookable.");
+    // Display Hotel detail
+    function displayHotelData(data) {
+    const hotelContainer = document.getElementById('Hotel-container');
+    hotelContainer.innerHTML = '';
+    
+    data.forEach(record => {
+    const recordElement = document.createElement('div');
+    recordElement.innerHTML = `
+    <p>Name: ${record.name}</p>
+    <p>City: ${record.city}</p>
+    <p>Bathrooms: ${record.bathrooms}</p>
+    <p>Bedrooms: ${record.bedrooms}</p>
+    <p>Beds: ${record.beds}</p>
+    <img src="${record.gifUrl}" alt="${record.title} GifUrl" />
+    
+    `;
+    hotelContainer.appendChild(recordElement);
+    });
     }
-  }
+    fetchHotelData()
+    // Fetch hotel data on page load
+    const navBtn = document.getElementById('nav-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const sideNav = document.getElementById('sidenav');
+    const modal = document.getElementById('modal');
+    
+    navBtn.addEventListener("click", function(){
+        sideNav.classList.add('show');
+        modal.classList.add('showModal');
+    });
+    
+    cancelBtn.addEventListener('click', function(){
+        sideNav.classList.remove('show');
+        modal.classList.remove('showModal');
+    });
+    
+    window.addEventListener('click', function(event){
+        if(event.target === modal){
+            sideNav.classList.remove('show');
+            modal.classList.remove('showModal');
+        }
+    });
