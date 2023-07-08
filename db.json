@@ -1,37 +1,42 @@
-
-{  "Hotelpaymentfeatures":
-[
-  {
-    "bookable": 1,
-    "cvc_required": 4,
-    "payable": 1,
-    "is_direct_payment": 0,
-    "creditcard_id": 1,
-    "hotel_id": "1676161"
-  },
-  {
-    "bookable": 1,
-    "creditcard_id": 3,
-    "is_direct_payment": 0,
-    "hotel_id": "1676161",
-    "payable": 1,
-    "cvc_required": 3
-  },
-  {
-    "hotel_id": "1676161",
-    "is_direct_payment": 0,
-    "creditcard_id": 2,
-    "payable": 1,
-    "cvc_required": 3,
-    "bookable": 1
-  },
-  {
-    "cvc_required": 0,
-    "is_direct_payment": 0,
-    "hotel_id": "1676161",
-    "creditcard_id": 18,
-    "payable": 1,
-    "bookable": 0
-  }
-]
+{
+  "Hotellocation": [
+    {
+      "id": "2150160",
+      "url": "https://www.airbnb.com/rooms/2150160",
+      "deeplink": "https://www.airbnb.com/rooms/2150160?check_in=2023-09-16&check_out=2023-09-17&adults=1&children=0&infants=0&pets=0",
+      "position": 1,
+      "name": "Charming room in a charming flat",
+      "bathrooms": 1,
+      "bedrooms": 1,
+      "beds": 1,
+      "city": "Paris",
+      "images": "https://a0.muscache.com/im/pictures/airflow/Hosting-2150160/original/e0e23de6-a3aa-45be-94f0-e5ff7958c5e8.jpg?im_w=720"
+    },
+       
+    {
+      "id": "43969632",
+      "url": "https://www.airbnb.com/rooms/43969632",
+      "deeplink": "https://www.airbnb.com/rooms/43969632?check_in=2023-09-16&check_out=2023-09-17&adults=1&children=0&infants=0&pets=0",
+      "position": 2,
+      "name": "Bedroom in the middle of Paris",
+      "bathrooms": 1,
+      "bedrooms": 1,
+      "beds": 1,
+      "city": "Paris",
+      "images": "https://a0.muscache.com/im/pictures/7e8f914c-4194-466c-b0b8-7da6bfa2ce3d.jpg?im_w=720"
+    },  
+    
+    {
+      "id": "22079484",
+      "url": "https://www.airbnb.com/rooms/22079484",
+      "deeplink": "https://www.airbnb.com/rooms/22079484?check_in=2023-09-16&check_out=2023-09-17&adults=1&children=0&infants=0&pets=0",
+      "position": 3,
+      "name": "Bedroom in a large apartment",
+      "bathrooms": 1,
+      "bedrooms": 1,
+      "beds": 1,
+      "city": "Paris",
+      "images": "https://a0.muscache.com/im/pictures/231b477c-3f64-4af3-85ae-647f0de57c8e.jpg?im_w=720"
+    }
+  ]
 }
