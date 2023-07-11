@@ -14,7 +14,9 @@ npm
 json-sever .
 
 ## Technology used
-HTML CSS Javascript 
+HTML 
+CSS 
+Javascript 
 
 ## Author
 Grace kungu
